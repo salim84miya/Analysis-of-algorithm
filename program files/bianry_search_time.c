@@ -1,13 +1,6 @@
-// #ifndef TIME_H
-#define TIME_H
-#define HAVE_STRUCT_TIMESPEC
-#define _POSIX_C_SOURCE 199309L
-
 #include <stdio.h>
 #include<stdlib.h>
 #include<time.h>
-
-#define TIME_UTC time(NULL)
 
 // A recursive binary search function. It returns
 // location of x in given array arr[l..r] is present,
@@ -52,6 +45,6 @@ int result = binarySearch(arr, 0, n - 1, x);
 struct timespec end;
 timespec_get(&end,TIME_UTC);
 double time = (end.tv_sec-begin.tv_sec)+(end.tv_nsec-begin.tv_nsec)/1000000000.00;
-printf("time taken for execution is %f",time);
+printf("\ntime taken for execution is %f",time);
 return 0;
 }
